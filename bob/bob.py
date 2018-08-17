@@ -1,23 +1,23 @@
 def hey(phrase):
-    if isSilence(phrase):
+    if silence(phrase):
         return "Fine. Be that way!"
-    elif isShouted(phrase) and isQuestion(phrase):
+    elif shouted(phrase) and question(phrase):
         return "Calm down, I know what I'm doing!"
-    elif isShouted(phrase):
+    elif shouted(phrase):
         return "Whoa, chill out!"
-    elif isQuestion(phrase):
+    elif question(phrase):
         return "Sure."
     else:
         return "Whatever."
 
 
-def isSilence(phrase):
+def silence(phrase):
     return phrase == "" or phrase.isspace()
 
 
-def isShouted(phrase):
+def shouted(phrase):
     return phrase.strip().isupper()
 
 
-def isQuestion(phrase):
+def question(phrase):
     return phrase.strip().endswith("?")

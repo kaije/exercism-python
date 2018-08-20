@@ -5,8 +5,7 @@ class SpaceAge(object):
     def age_in_planet_years(self, orbital_period_in_earth_years):
         SECONDS_PER_EARTH_YEAR = 31557600
         seconds_per_planet_year = SECONDS_PER_EARTH_YEAR * orbital_period_in_earth_years
-        age_on_planet = self.seconds / seconds_per_planet_year
-        return round(age_on_planet, 2)
+        return round(self.seconds / seconds_per_planet_year, 2)
 
     def on_mercury(self):
         return self.age_in_planet_years(0.2408467)

@@ -12,11 +12,11 @@ class Allergies(object):
     }
 
     def __init__(self, score):
-        self.score = score
-        self.list = list(item for item in self.ITEM_SCORES if self.is_allergic_to(item))
+        self.list = list(item for item in self.ITEM_SCORES if bool(
+            self.ITEM_SCORES[item] & score))
 
     def is_allergic_to(self, item):
-        return bool(self.ITEM_SCORES[item] & self.score)
+        return item in self.list
 
     @property
     def lst(self):
